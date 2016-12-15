@@ -1,0 +1,13 @@
+[GLOBAL f_insw]
+
+f_insw:
+   push ebp
+   mov ebp, esp
+
+   mov edx, [ebp+8]	;port number
+   mov edi, [ebp+12] 	;buffer address 
+   mov eax, [ebp+16]	;number of words
+   insw			;read
+
+   pop ebp
+   ret
